@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B5D247F825C39DB400E00410 /* VendorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D247F725C39DB400E00410 /* VendorApp.swift */; };
-		B5D247FA25C39DB400E00410 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D247F925C39DB400E00410 /* ContentView.swift */; };
+		B5D247FA25C39DB400E00410 /* WelcomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D247F925C39DB400E00410 /* WelcomeScreen.swift */; };
 		B5D247FC25C39DB600E00410 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5D247FB25C39DB600E00410 /* Assets.xcassets */; };
 		B5D247FF25C39DB600E00410 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5D247FE25C39DB600E00410 /* Preview Assets.xcassets */; };
 		B5D2480A25C39DB600E00410 /* VendorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D2480925C39DB600E00410 /* VendorTests.swift */; };
@@ -35,7 +35,7 @@
 /* Begin PBXFileReference section */
 		B5D247F425C39DB400E00410 /* Vendor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Vendor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5D247F725C39DB400E00410 /* VendorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VendorApp.swift; sourceTree = "<group>"; };
-		B5D247F925C39DB400E00410 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		B5D247F925C39DB400E00410 /* WelcomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeScreen.swift; sourceTree = "<group>"; };
 		B5D247FB25C39DB600E00410 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B5D247FE25C39DB600E00410 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		B5D2480025C39DB600E00410 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -96,7 +96,7 @@
 			isa = PBXGroup;
 			children = (
 				B5D247F725C39DB400E00410 /* VendorApp.swift */,
-				B5D247F925C39DB400E00410 /* ContentView.swift */,
+				B5D247F925C39DB400E00410 /* WelcomeScreen.swift */,
 				B5D247FB25C39DB600E00410 /* Assets.xcassets */,
 				B5D2480025C39DB600E00410 /* Info.plist */,
 				B5D247FD25C39DB600E00410 /* Preview Content */,
@@ -259,7 +259,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B5D247FA25C39DB400E00410 /* ContentView.swift in Sources */,
+				B5D247FA25C39DB400E00410 /* WelcomeScreen.swift in Sources */,
 				B5D247F825C39DB400E00410 /* VendorApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
