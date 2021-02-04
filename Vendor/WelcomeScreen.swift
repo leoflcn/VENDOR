@@ -20,8 +20,12 @@ struct WelcomeScreen: View {
                 Spacer()
                 Spacer()
                 Spacer()
-                Spacer()
-                Spacer()
+                Text("Start to Discover")
+                    .foregroundColor(Color.white)
+
+                Text("Start fiding your place right now")
+                    .foregroundColor(Color.white)
+
                 ZStack{
                     Button("Click Me", action: {
                         
@@ -36,21 +40,22 @@ struct WelcomeScreen: View {
                 HStack{
                     Text("Don't have an account?")
                         .foregroundColor(Color.white)
-                        
-                    Text("Register")
-                        .foregroundColor(Color.red)
+                        .font(.system(size:12))
                     
-                        
+                    Button("Register", action: {
+                            
+                        print("Hello World")
+                            
+                    })
+                        .foregroundColor(Color.red)
+                        .font(.system(size:12))
+                    
                 }
                 Spacer()
-                Spacer()
-                }
-                Spacer()
-                Spacer()
-            
             }
         }
     }
+}
 
 
 struct WelcomeScreen_Previews: PreviewProvider {
