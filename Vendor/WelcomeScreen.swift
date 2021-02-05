@@ -10,53 +10,32 @@ import SwiftUI
 struct WelcomeScreen: View {
     var body: some View {
         ZStack{
-        Image("welcomescreenbackground")
-            .resizable()
-            .aspectRatio(contentMode: /*@START_MENU_TOKEN@*/.fill/*@END_MENU_TOKEN@*/)
-            .background(/*@START_MENU_TOKEN@*//*@PLACEHOLDER=View@*/Color.blue/*@END_MENU_TOKEN@*/)
+            Color("UseBlack")
+                .edgesIgnoringSafeArea(.all)
             
-            VStack{
-                Spacer()
-                Spacer()
-                Spacer()
-                Spacer()
-                Text("Start to Discover")
-                    .foregroundColor(Color.white)
-
-                Text("Start fiding your place right now")
-                    .foregroundColor(Color.white)
-
-                ZStack{
-                    Button("Click Me", action: {
-                        
-                        print("Hello World")
-                        
-                    })
-                    Image("welcomelogin")
-                        .resizable()
-                        .scaledToFit()
-                    
+            Spacer()
+            
+            Button(action: {
+                print("It Works")
+            }) {
+                HStack() {
+                    Text("Log In Now")
+                        .fontWeight(.semibold)
+                        .font(.title)
                 }
-                HStack{
-                    Text("Don't have an account?")
-                        .foregroundColor(Color.white)
-                        .font(.system(size:12))
-                    
-                    Button("Register", action: {
-                            
-                        print("Hello World")
-                            
-                    })
-                        .foregroundColor(Color.red)
-                        .font(.system(size:12))
-                    
-                }
-                Spacer()
-            }
+                .padding()
+                .foregroundColor(.white)
+                .background(Color.red)
+                .cornerRadius(40)
+        }
+                //Text("Start to Discover")
+                 //   .foregroundColor(Color.white)
+
+                //Text("Start fiding your place right now")
+                    //.foregroundColor(Color.white)
         }
     }
 }
-
 
 struct WelcomeScreen_Previews: PreviewProvider {
     static var previews: some View {
