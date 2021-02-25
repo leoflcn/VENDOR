@@ -28,29 +28,35 @@ struct WelcomeScreen: View {
                         Text("Start to Discover")
                             .font(.system(size: 32, weight: .medium, design: .default))
                             .foregroundColor(.white)
+                            .frame(width: 500, height: 35, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                            .offset(x: -75, y: 0)
+                            
+                        
                         
                         Text("Start finding your place right now")
                             .font(.system(size: 20, weight: .light, design: .default))
                             .foregroundColor(.white)
-                    
+                            .frame(width: 500, height: 35, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                            .offset(x: -50, y: 0)
+                        
                     }
                     
                     Spacer()
                     
                     Button(action: {
-                                    print("It Works")
-                                }) {
-                                    HStack() {
-                                        Text("Log In Now")
-                                            .fontWeight(.semibold)
-                                            .font(.title)
-                                    }
-                                    .padding()
-                                    .frame(width: 390, height: 55, alignment: .center)
-                                    .foregroundColor(.white)
-                                    .background(Color("UseMainRed"))
-                                    .cornerRadius(40)
-                                }
+                        print("It Works")
+                    }) {
+                        HStack() {
+                            Text("Log In Now")
+                                .fontWeight(.semibold)
+                                .font(.title)
+                        }
+                        .padding()
+                        .frame(width: 390, height: 55, alignment: .center)
+                        .foregroundColor(.white)
+                        .background(Color("UseMainRed"))
+                        .cornerRadius(40)
+                    }
                     
                     Spacer()
                     
@@ -59,16 +65,16 @@ struct WelcomeScreen: View {
                             .font(.system(size: 15, weight: .light, design: .default))
                             .foregroundColor(.white)
                         
-                        NavigationLink(destination: Text("Registraion Page"), label: { Text("Register")})
+                        NavigationLink(destination: SignupView(), label: { Text("Register")})
                             .foregroundColor(Color("Dark Red"))
-                
-                    }
                         
+                    }
+                    
+                }
             }
         }
     }
 }
-
 struct WelcomeScreen_Previews: PreviewProvider {
     static var previews: some View {
         Group {
@@ -76,4 +82,5 @@ struct WelcomeScreen_Previews: PreviewProvider {
         }
     }
 }
-}
+
+
