@@ -1,0 +1,13 @@
+[
+    {
+        "id": 1,
+        "name": "UTSA",
+        "type": "Food",
+        "building": "engineeringbuilding50",
+        "buildingDescription": "This is the UTSA engineering building.",
+        "address": "idk its at UTSA",
+        "latitude": 29.5827,
+        "longitude": -98.6189,
+        "items": [Item(name: "poo", price: 2, description: "hji", image: "Food")]
+    },
+]

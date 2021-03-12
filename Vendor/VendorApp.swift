@@ -9,9 +9,25 @@ import SwiftUI
 
 @main
 struct VendorApp: App {
+    @StateObject var vms = VMs()
+    
     var body: some Scene {
         WindowGroup {
-            WelcomeScreen()
+            TabView {
+                NavigationView {
+                    WelcomeScreen()
+                }
+                .tabItem { Text("Log in") }
+                
+                NavigationView {
+                    VendorMap()
+                    .navigationBarTitle("Map")
+                    .navigationBarHidden(true)
+                }
+                .tabItem { Text("Map") }
+                
+            }
+            .environmentObject(vms)
         }
     }
 }

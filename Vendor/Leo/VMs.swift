@@ -8,10 +8,10 @@
 import Foundation
 
 class VMs: ObservableObject {
-    let machines: [VM]
+    var machines: [VM] = []
     
     init() {
-        let url = Bundle.main.url(forResource: "VMs", withExtension: "json")!
+        let url = Bundle.main.url(forResource: "testyVMs", withExtension: "json")!
         let data = try! Data(contentsOf: url)
         machines = try! JSONDecoder().decode([VM].self, from: data)
     }

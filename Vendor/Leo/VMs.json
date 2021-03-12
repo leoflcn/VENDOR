@@ -1,0 +1,44 @@
+[
+    {
+        "id": 1,
+        "name": "UTSA",
+        "type": "Food",
+        "building": "engineeringbuilding50",
+        "buildingDescription": "This is the UTSA engineering building.",
+        "address": "idk its at UTSA",
+        "latitude": 29.5827,
+        "longitude": -98.6189,
+        "itemNames": ["Chips", "Cookies", "Gum"],
+        "itemPrices": [1, 3, 4],
+        "itemDescriptions": ["Snack", "Snack", "Snack"],
+        "itemImages": ["Food", "Food", "Food"]
+    },
+    {
+        "id": 2,
+        "name": "UT",
+        "type": "Drink",
+        "building": "engineeringbuilding50",
+        "buildingDescription": "This is the UT engineering building.",
+        "address": "idk its at UT",
+        "latitude": 30.2849,
+        "longitude": -97.7341,
+        "itemNames": ["Sprite", "Coke", "Water"],
+        "itemPrices": [1, 4, 5],
+        "itemDescriptions": ["Drink", "Drink", "Drink"],
+        "itemImages": ["Drink", "Drink", "Drink"]
+    },
+    {
+        "id": 3,
+        "name": "UoH",
+        "type": "Food",
+        "building": "engineeringbuilding50",
+        "buildingDescription": "This is the UoH engineering building.",
+        "address": "idk its at UoH",
+        "latitude": 29.7199,
+        "longitude": -95.3422,
+        "itemNames": ["Chips", "Cookies", "Gum"],
+        "itemPrices": [2, 3, 6],
+        "itemDescriptions": ["Snack", "Snack", "Snack"],
+        "itemImages": ["Food", "Food", "Food"]
+    },
+]
