@@ -19,11 +19,6 @@ struct VM: Decodable, Identifiable {
     let longitude: Double
     let items: [Item]
     
-  //  let itemNames: [String]
-  //  let itemPrices: [Double]
-  //  let itemDescriptions: [String]
- //   let itemImages: [String]
-    
     static let example = VM (id: 1,
                              name: "UTSA",
                              type: "Food",
@@ -32,11 +27,10 @@ struct VM: Decodable, Identifiable {
                              address: "idk its at UTSA",
                              latitude: 29.5827,
                              longitude: -98.6189,
-                             items: [Item(name: "poo", price: 2, description: "hji", image: "Food")]
-                            // itemNames: ["Chips", "Cookies", "Gum"],
-                           //   itemPrices: [1, 3, 4],
-                           //  itemDescriptions: ["Snack", "Snack", "Snack"],
-                           //  itemImages: ["Food", "Food", "Food"]
+                             items: [Item(id: 1, name: "poo", price: 2, description: "hji", image: "Food", isAdded: false),
+                                     Item(id: 2, name: "poo", price: 2, description: "hji", image: "Food", isAdded: false),
+                                     Item(id: 3, name: "poo", price: 2, description: "hji", image: "Food", isAdded: false)]
+
     )
 }
 

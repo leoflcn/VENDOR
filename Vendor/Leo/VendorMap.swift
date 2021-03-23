@@ -33,7 +33,7 @@ struct VendorMap: View {
                 Map(coordinateRegion: $region, interactionModes: .all, showsUserLocation: true, userTrackingMode: nil, annotationItems: vms.machines) {
                     VM in
                     MapAnnotation(coordinate: CLLocationCoordinate2D(latitude: VM.latitude, longitude: VM.longitude)) {
-                        NavigationLink(destination: NewVendorView(VM: VM)) {
+                        NavigationLink(destination: VendorView(VM: VM)) {
                             Image(VM.type)
                                 .resizable()
                                 .cornerRadius(10)

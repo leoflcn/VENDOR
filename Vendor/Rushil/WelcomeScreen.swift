@@ -61,7 +61,7 @@ struct WelcomeScreen: View {
                     Spacer()
                     
                     HStack {
-                        Text("Don's have an account?")
+                        Text("Don't have an account?")
                             .font(.system(size: 15, weight: .light, design: .default))
                             .foregroundColor(.white)
                         
