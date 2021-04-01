@@ -1,0 +1,6 @@
+framework module Pods_Vendor_VendorUITests {
+  umbrella header "Pods-Vendor-VendorUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
