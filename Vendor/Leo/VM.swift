@@ -6,10 +6,10 @@
 //
 
 import Foundation
-
-struct VM: Decodable, Identifiable {
+import FirebaseFirestoreSwift
+struct VM: Codable, Identifiable {
     
-    let id: Int
+    @DocumentID var id: String? = UUID().uuidString
     let name: String
     let type: String
     let building: String
@@ -19,7 +19,7 @@ struct VM: Decodable, Identifiable {
     let longitude: Double
     let items: [Item]
     
-    static let example = VM (id: 1,
+    static let example = VM (id: "sd",
                              name: "UTSA",
                              type: "Food",
                              building: "engineeringbuilding50",

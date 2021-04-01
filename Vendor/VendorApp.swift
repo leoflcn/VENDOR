@@ -6,10 +6,14 @@
 //
 
 import SwiftUI
+import Firebase
 
 @main
-struct VendorApp: App {
-    @StateObject var vms = VMs()
+struct FiretestApp: App {
+    
+    init() {
+        FirebaseApp.configure()
+    }
     
     var body: some Scene {
         WindowGroup {
@@ -27,7 +31,6 @@ struct VendorApp: App {
                 .tabItem { Text("Map") }
                 
             }
-            .environmentObject(vms)
         }
     }
 }

@@ -6,13 +6,26 @@
 //
 
 import Foundation
+import FirebaseFirestore
+import FirebaseFirestoreSwift
 
 class VMs: ObservableObject {
-    var machines: [VM] = []
+    @Published var machines = [VM]()
     
-    init() {
-        let url = Bundle.main.url(forResource: "VMs", withExtension: "json")!
-        let data = try! Data(contentsOf: url)
-        machines = try! JSONDecoder().decode([VM].self, from: data)
+    var db = Firestore.firestore()
+    
+    func FetchData() {
+        
+        db.collection("Vending Machines").addSnapshotListener { (querySnapshot, error) in
+            guard let documents = querySnapshot?.documents else {
+                print("No documents")
+                return
+            }
+           
+            self.machines = documents.compactMap { queryDocumentSnapshot -> VM? in
+                return try? queryDocumentSnapshot.data(as: VM.self)
+                
+            }
+        }
     }
 }

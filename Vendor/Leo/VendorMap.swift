@@ -12,7 +12,7 @@ import SwiftUI
 
 struct VendorMap: View {
     
-    @EnvironmentObject var vms: VMs
+    @ObservedObject var VModel = VMs()
     @ObservedObject private var locationManager = LocationManager()
     @State private var region = MKCoordinateRegion(center: CLLocationCoordinate2D.init(latitude: 31, longitude: -100), span: MKCoordinateSpan(latitudeDelta: 0.2, longitudeDelta: 0.2))
     @State private var cancellable: AnyCancellable?
@@ -30,7 +30,7 @@ struct VendorMap: View {
         
         VStack{
             if locationManager.location != nil {
-                Map(coordinateRegion: $region, interactionModes: .all, showsUserLocation: true, userTrackingMode: nil, annotationItems: vms.machines) {
+                Map(coordinateRegion: $region, interactionModes: .all, showsUserLocation: true, userTrackingMode: nil, annotationItems: VModel.machines) {
                     VM in
                     MapAnnotation(coordinate: CLLocationCoordinate2D(latitude: VM.latitude, longitude: VM.longitude)) {
                         NavigationLink(destination: VendorView(VM: VM)) {
@@ -49,6 +49,7 @@ struct VendorMap: View {
             }
         }
         .onAppear { setCurrentLocation() }
+        .onAppear { VModel.FetchData() }
     }
 }
 

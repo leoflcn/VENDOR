@@ -7,6 +7,7 @@
 import SwiftUI
 
 struct VendorView: View {
+
     let VM: VM
     @State private var isExpanded: Bool = false
     var body: some View
@@ -80,7 +81,7 @@ struct VendorView: View {
                     Spacer()
                     VStack(alignment: .leading) //location information
                     {
-                        Text(VM.buildingDescription + "                spacing") // There is a problem here with spacing
+                        Text(VM.buildingDescription + "                       ") // There is a problem here with spacing
                             .lineLimit(isExpanded ? nil : 2)
                             .background(!isExpanded ? nil : Color("UseBlack"))
                         Button(action:{
@@ -107,8 +108,8 @@ struct VendorView: View {
                     {
                         ForEach(VM.items) { item in
                             
-                            Button(action: { print("selected") } ) {
-                                
+                            NavigationLink (destination: ItemView(item: item)) {
+                                // option 1 navigation link to the item
                                 VStack(alignment: .leading) {
                                     
                                     Image(item.image)
@@ -135,7 +136,7 @@ struct VendorView: View {
                     }
                 }
                 
-                Button(action: { print("It Works") } ) {
+                Button(action: { print("hi") } ) {
                     HStack()
                     {
                         Text("Make your order!")
