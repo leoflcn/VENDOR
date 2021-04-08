@@ -17,20 +17,12 @@ struct FiretestApp: App {
     
     var body: some Scene {
         WindowGroup {
-            TabView {
-                NavigationView {
-                    WelcomeScreen()
-                }
-                .tabItem { Text("Log in") }
-                
-                NavigationView {
-                    VendorMap()
-                    .navigationBarTitle("Map")
-                    .navigationBarHidden(true)
-                }
-                .tabItem { Text("Map") }
-                
+            NavigationView {
+                WelcomeScreen()
+                .navigationBarTitle("Log in")
+                .navigationBarHidden(true)
             }
+
         }
     }
 }

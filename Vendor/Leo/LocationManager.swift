@@ -29,6 +29,7 @@ extension LocationManager: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         
         guard let location = locations.last else { return }
+        locationManager.stopUpdatingLocation()
         
         DispatchQueue.main.async {
             self.location = location

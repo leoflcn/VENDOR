@@ -7,12 +7,13 @@
 import SwiftUI
 
 struct VendorView: View {
-
+    @Environment(\.presentationMode) var presentation
+    
     let VM: VM
     @State private var isExpanded: Bool = false
     var body: some View
     {
-        ZStack(alignment:.top)
+        ZStack(alignment:.topLeading)
         {
             Color("UseBlack")
                 .edgesIgnoringSafeArea(.all)
@@ -51,22 +52,31 @@ struct VendorView: View {
                             {
                                 Circle()
                                     .frame(width: 60, height: 60)
-                                    .foregroundColor(.orange)
-                                Button(action: {} )
-                                {
+                                    .foregroundColor(.white)
+                                
+                                NavigationLink(
+                                    destination: WelcomeScreen()){
                                     HStack()
                                     {
+                                        Image(systemName: "house")
+                                            .foregroundColor(Color("UseMainRed"))
+                                            .font(.system(size: 25))
                                     }
                                     .padding()
                                     .frame(width: 55, height: 55, alignment: .center)
                                     .background(Color.white)
                                     .cornerRadius(30)
                                 }
+                                
+                                
                             }
-                            Button(action: { print("Return to map") } ) //red button
-                            {
-                                HStack()
+                            
+                            NavigationLink(
+                                destination: VendorMap()) {
+                                ZStack()
                                 {
+                                    Image(systemName: "map")
+                                        .font(.system(size: 25))
                                 }
                                 .padding()
                                 .frame(width: 60, height: 60, alignment: .center)
@@ -135,7 +145,8 @@ struct VendorView: View {
                         }
                     }
                 }
-                
+                .navigationBarTitle("VM")
+                .navigationBarHidden(true)
                 Button(action: { print("hi") } ) {
                     HStack()
                     {
@@ -151,17 +162,30 @@ struct VendorView: View {
                 }
                 .frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
             }
+            
+            Button(action: { presentation.wrappedValue.dismiss() }) {
+                HStack {
+                    Image(systemName: "chevron.left")
+                        .foregroundColor(.white)
+                        .imageScale(.large)
+                    Text("Map")
+                        .font(.title3)
+                        .foregroundColor(.white)
+                }
+            }
+            .padding(.leading)
+            .padding(.top)
         }
     }
 }
-        
-        
+
+
 struct NewVendorView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
             VendorView(VM: VM.example)
-                .navigationBarTitle(" ")
-                .navigationBarHidden(true)
         }
+        .navigationBarTitle(" ")
+        .navigationBarHidden(true)
     }
 }

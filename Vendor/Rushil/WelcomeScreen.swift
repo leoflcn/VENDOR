@@ -1,7 +1,7 @@
 //
 //  ContentView.swift
 //  Vendor
-//  
+//
 //  Created by Rushil Mistry on 1/28/21.
 //
 
@@ -43,9 +43,8 @@ struct WelcomeScreen: View {
                     
                     Spacer()
                     
-                    Button(action: {
-                        print("It Works")
-                    }) {
+                    NavigationLink(
+                        destination: VendorMap()){
                         HStack() {
                             Text("Log In Now")
                                 .fontWeight(.semibold)
@@ -57,7 +56,7 @@ struct WelcomeScreen: View {
                         .background(Color("UseMainRed"))
                         .cornerRadius(40)
                     }
-                    
+                
                     Spacer()
                     
                     HStack {
