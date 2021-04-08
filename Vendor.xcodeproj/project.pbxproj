@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		6DCEC754B6CB9ADB870788B6 /* Pods_Vendor_VendorUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB1AD5E55B6A83976CB1794B /* Pods_Vendor_VendorUITests.framework */; };
 		B33BE7952612DA93002303CC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B33BE7942612DA93002303CC /* GoogleService-Info.plist */; };
-		B33ED6C8261D661900DAAD47 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33ED6C7261D661900DAAD47 /* ContentView.swift */; };
 		B33ED6CD261D665F00DAAD47 /* VendorApp2.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33ED6CC261D665F00DAAD47 /* VendorApp2.swift */; };
 		B33ED6D2261D671D00DAAD47 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33ED6D1261D671D00DAAD47 /* LoginViewModel.swift */; };
 		B33ED6D7261D676800DAAD47 /* WelcomeScreen2.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33ED6D6261D676800DAAD47 /* WelcomeScreen2.swift */; };
@@ -26,6 +25,7 @@
 		B34132E6261568AD00B36B62 /* UserAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34132E2261568AC00B36B62 /* UserAccountView.swift */; };
 		B34132E7261568AD00B36B62 /* SignupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34132E3261568AC00B36B62 /* SignupView.swift */; };
 		B346BB12261ED1A700B96C63 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B346BB11261ED1A700B96C63 /* SettingsView.swift */; };
+		B3558C1A261FCFE700987D60 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3558C19261FCFE700987D60 /* ContentView.swift */; };
 		B5D247F825C39DB400E00410 /* VendorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D247F725C39DB400E00410 /* VendorApp.swift */; };
 		B5D247FC25C39DB600E00410 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5D247FB25C39DB600E00410 /* Assets.xcassets */; };
 		B5D247FF25C39DB600E00410 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5D247FE25C39DB600E00410 /* Preview Assets.xcassets */; };
@@ -59,7 +59,6 @@
 		A6C838BF21CFC3CC02809630 /* Pods_VendorTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VendorTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B33BE7942612DA93002303CC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B33ED6B7261D58E900DAAD47 /* Vendor.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Vendor.entitlements; sourceTree = "<group>"; };
-		B33ED6C7261D661900DAAD47 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		B33ED6CC261D665F00DAAD47 /* VendorApp2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VendorApp2.swift; sourceTree = "<group>"; };
 		B33ED6D1261D671D00DAAD47 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		B33ED6D6261D676800DAAD47 /* WelcomeScreen2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeScreen2.swift; sourceTree = "<group>"; };
@@ -76,6 +75,7 @@
 		B34132E2261568AC00B36B62 /* UserAccountView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserAccountView.swift; sourceTree = "<group>"; };
 		B34132E3261568AC00B36B62 /* SignupView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupView.swift; sourceTree = "<group>"; };
 		B346BB11261ED1A700B96C63 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		B3558C19261FCFE700987D60 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContentView.swift; path = "../../../Vendor 2/Vendor/Login/ContentView.swift"; sourceTree = "<group>"; };
 		B5D247F425C39DB400E00410 /* Vendor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Vendor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5D247F725C39DB400E00410 /* VendorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VendorApp.swift; sourceTree = "<group>"; };
 		B5D247FB25C39DB600E00410 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -138,7 +138,7 @@
 		B33ED6C6261D65F700DAAD47 /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				B33ED6C7261D661900DAAD47 /* ContentView.swift */,
+				B3558C19261FCFE700987D60 /* ContentView.swift */,
 				B33ED6CC261D665F00DAAD47 /* VendorApp2.swift */,
 				B33ED6D1261D671D00DAAD47 /* LoginViewModel.swift */,
 				B33ED6D6261D676800DAAD47 /* WelcomeScreen2.swift */,
@@ -487,7 +487,6 @@
 			files = (
 				B34132E7261568AD00B36B62 /* SignupView.swift in Sources */,
 				B34132DB2615685900B36B62 /* VendorMap.swift in Sources */,
-				B33ED6C8261D661900DAAD47 /* ContentView.swift in Sources */,
 				B346BB12261ED1A700B96C63 /* SettingsView.swift in Sources */,
 				B34132E4261568AC00B36B62 /* PaymentView.swift in Sources */,
 				B33ED6D2261D671D00DAAD47 /* LoginViewModel.swift in Sources */,
@@ -500,6 +499,7 @@
 				B33ED6D7261D676800DAAD47 /* WelcomeScreen2.swift in Sources */,
 				B34132D42615685900B36B62 /* ItemView.swift in Sources */,
 				B34132D92615685900B36B62 /* LocationManager.swift in Sources */,
+				B3558C1A261FCFE700987D60 /* ContentView.swift in Sources */,
 				B5D247F825C39DB400E00410 /* VendorApp.swift in Sources */,
 				B34132E6261568AD00B36B62 /* UserAccountView.swift in Sources */,
 				B34132D82615685900B36B62 /* Purchase.swift in Sources */,
