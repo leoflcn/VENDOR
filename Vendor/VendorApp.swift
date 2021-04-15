@@ -10,18 +10,18 @@ import Firebase
 
 @main
 struct FiretestApp: App {
-    
+
     init() {
         FirebaseApp.configure()
     }
 
     var body: some Scene {
         WindowGroup {
-            NavigationView {
+          //  NavigationView {
                 WelcomeScreen()
-                .navigationBarTitle("Log in")
-                .navigationBarHidden(true)
-            }
+//                .navigationBarTitle("Log in")
+//                .navigationBarHidden(true)
+//            }
 
         }
     }

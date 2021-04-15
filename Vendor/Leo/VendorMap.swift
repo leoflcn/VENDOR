@@ -37,7 +37,10 @@ struct VendorMap: View {
                     Map(coordinateRegion: $region, interactionModes: .all, showsUserLocation: true, userTrackingMode: nil, annotationItems: VModel.machines) {
                         VM in
                         MapAnnotation(coordinate: CLLocationCoordinate2D(latitude: VM.latitude, longitude: VM.longitude)) {
-                            NavigationLink(destination: VendorView(VM: VM)) {
+                            NavigationLink(destination: VendorView(VM: VM)
+                                            .navigationBarTitle("")
+                                            .navigationBarHidden(true)
+                                            .navigationViewStyle(StackNavigationViewStyle())) {
                                 Image(VM.type)
                                     .resizable()
                                     .cornerRadius(10)
@@ -51,20 +54,24 @@ struct VendorMap: View {
                 VStack(alignment: .leading){
                     
                     NavigationLink(
-                        destination: SettingsView()){
+                        destination: SettingsView()
+                            .navigationBarTitle("")
+                            .navigationBarHidden(true)
+                            .navigationViewStyle(StackNavigationViewStyle())){
                         Image(systemName: "ellipsis.circle")
                             .foregroundColor(Color("UseMainRed"))
                             .font(.system(size: 25))
                             .frame(width: 55, height: 55, alignment: .center)
-                          //  .background(Color.white)
+                            //  .background(Color.white)
                             .cornerRadius(30)
                     }
                 }
                 .offset(x: 150, y: -370)
             }
         }
-        .navigationBarTitle("Map")
-        .navigationBarHidden(true)
+//        .navigationBarTitle("Map")
+//        .navigationBarHidden(true)
+//        .navigationViewStyle(StackNavigationViewStyle())
         .onAppear { setCurrentLocation() }
         .onAppear { VModel.FetchData() }
         .edgesIgnoringSafeArea(.all)

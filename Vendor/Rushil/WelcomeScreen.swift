@@ -44,7 +44,10 @@ struct WelcomeScreen: View {
                     Spacer()
                     
                     NavigationLink(
-                        destination: VendorMap()){
+                        destination: VendorMap()
+                            .navigationBarTitle("")
+                            .navigationBarHidden(true)
+                            .navigationViewStyle(StackNavigationViewStyle())){
                         HStack() {
                             Text("Log In Now")
                                 .fontWeight(.semibold)

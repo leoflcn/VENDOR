@@ -28,10 +28,7 @@ struct SettingsView: View {
                         HStack {
                             Image(systemName: "chevron.left")
                                 .foregroundColor(.white)
-                                .imageScale(.large)
-                            Text("Map")
-                                .font(.title3)
-                                .foregroundColor(.white)
+                                .font(.title)
                         }
                     }
                     .padding(.leading)

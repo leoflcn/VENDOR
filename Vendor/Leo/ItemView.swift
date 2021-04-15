@@ -29,134 +29,197 @@
 //    }
 //}
 
-//
-//  CartView.swift
-//  Food App
-//
-//  Created by Balaji on 28/10/20.
-//
-
 import SwiftUI
 
 struct ItemView: View {
-    let item: Item
-    @StateObject var buy = Purchase()
-    @Environment(\.presentationMode) var present
+    
+    @Binding var item : Item!
+    @Binding var show: Bool
+    var animation: Namespace.ID
+    // Initialization....
+    @State var selectedColor = Color.red
+    
+    @State var count = 0
+    
+    @State var isSmallDevice = UIScreen.main.bounds.height < 750
+    
     var body: some View {
-        ZStack {
-            Color("UseBlack")
-                .edgesIgnoringSafeArea(.all)
-            VStack{
+        
+        VStack{
+            
+            HStack{
                 
-                HStack(spacing: 20){
+                VStack(alignment: .leading, spacing: 5){
                     
-                    Button(action: {present.wrappedValue.dismiss()}) {
+                    Button(action: {
+                        
+                        withAnimation(.easeOut){show.toggle()}
+                        
+                    }) {
                         
                         Image(systemName: "chevron.left")
-                            .font(.system(size: 26, weight: .heavy))
-                            .foregroundColor(Color("Dark Red"))
+                            .font(.title)
+                            .foregroundColor(.white)
+                            .offset(y: 3)
                     }
                     
-                    Text("My cart")
-                        .font(.title)
+                    Text("Delicious Treat")
+                        .fontWeight(.bold)
+                        .foregroundColor(.white)
+                        .padding(.top)
+                    
+                    Text(item.name)
+                        .font(.largeTitle)
                         .fontWeight(.heavy)
                         .foregroundColor(.white)
-                    
-                    Spacer()
                 }
-                .padding()
                 
-                ScrollView(.vertical, showsIndicators: false) {
+                Spacer(minLength: 0)
+                
+                Button(action: {}) {
                     
-                    LazyVStack(spacing: 0){
-                        
-                        
-                        // Cart ItemView....
-                        
-                        HStack(spacing: 15){
-                            
-                            Image(item.image)
-                                .resizable()
-                                .aspectRatio(contentMode: .fill)
-                                .frame(width: 130, height: 130)
-                                .cornerRadius(15)
-                            
-                            VStack(alignment: .leading, spacing: 10) {
-                                
-                                Text(item.name)
-                                    .fontWeight(.semibold)
-                                    .foregroundColor(.black)
-                                
-                                Text(item.description)
-                                    .fontWeight(.semibold)
-                                    .foregroundColor(.gray)
-                                    .lineLimit(2)
-                                
-                                HStack(spacing: 15){
-                                    
-                                    Text("$" + String(item.price))
-                                        .font(.title2)
-                                        .fontWeight(.heavy)
-                                        .foregroundColor(.black)
-                                    
-                                    Spacer(minLength: 0)
-                                    
-                                    // Add - Sub Button...
-                                    
-                                }
-                            }
-                        }
-                        .padding()
-                        .contentShape(RoundedRectangle(cornerRadius: 15))
-                        .contextMenu{
-                            
-                            
-                        }
-                        
-                    }
+                    Image(systemName: "cart")
+                        .font(.title)
+                        .foregroundColor(.white)
                 }
-                // Bottom View...
                 
-                VStack{
+            }
+            .padding()
+            .padding(.top,UIApplication.shared.windows.first?.safeAreaInsets.top)
+            
+            HStack(spacing: 10){
+                
+                VStack(alignment: .leading, spacing: 6) {
+                    
+                    Text("Price")
+                        .fontWeight(.bold)
+                        .foregroundColor(.white)
+                    
+                    Text("$" + String(item.price))
+                        .font(.largeTitle)
+                        .fontWeight(.heavy)
+                        .foregroundColor(.white)
+                }
+                
+                Image(item.image)
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    // Hero Animation...
+                    .matchedGeometryEffect(id: item.image, in: animation)
+            }
+            .padding()
+            .padding(.top,10)
+            .zIndex(1)
+            
+            VStack{
+                
+                ScrollView(isSmallDevice ? .vertical : .init(), showsIndicators: false) {
                     
                     HStack{
                         
-                        Text("Total")
-                            .fontWeight(.heavy)
-                            .foregroundColor(.gray)
+                        VStack(alignment: .leading, spacing: 8) {
+                            
+                            Text("Very")
+                                .fontWeight(.bold)
+                                .foregroundColor(.gray)
+                            
+                            Text("Tasty")
+                                .fontWeight(.heavy)
+                                .foregroundColor(.black)
+                            
+                        }
+                        
+                        Spacer(minLength: 0)
+                        
+                        VStack(alignment: .leading, spacing: 8) {
+                            
+                            Text("Quantity")
+                                .fontWeight(.semibold)
+                                .foregroundColor(.black)
+                            
+                            Text("10")
+                                .fontWeight(.heavy)
+                                .foregroundColor(.black)
+                        }
+                    }
+                    .padding(.horizontal)
+                    
+                    Text(item.description)
+                        .foregroundColor(.gray)
+                        .multilineTextAlignment(.leading)
+                        .padding()
+                    
+                    HStack(spacing: 20){
+                        
+                        Button(action: {
+                            if count > 0{count -= 1}
+                        }) {
+                            
+                            Image(systemName: "minus")
+                                .font(.title2)
+                                .foregroundColor(.gray)
+                                .frame(width: 35, height: 35)
+                                .background(RoundedRectangle(cornerRadius: 10).stroke(Color.gray,lineWidth: 1))
+                        }
+                        
+                        Text("\(count)")
+                            .font(.title2)
+                        
+                        Button(action: {count += 1}) {
+                            
+                            Image(systemName: "plus")
+                                .font(.title2)
+                                .foregroundColor(.gray)
+                                .frame(width: 35, height: 35)
+                                .background(RoundedRectangle(cornerRadius: 10).stroke(Color.gray,lineWidth: 1))
+                        }
                         
                         Spacer()
                         
-                        // calculating Total Price...
-                        Text("$" + String(item.price))
-                            .font(.title)
-                            .fontWeight(.heavy)
-                            .foregroundColor(.black)
+                        Button(action: {}) {
+                            
+                            Image(systemName: "suit.heart.fill")
+                                .font(.title2)
+                                .foregroundColor(.white)
+                                .padding(10)
+                                .background(Color("UseMainRed"))
+                                .clipShape(Circle())
+                        }
                     }
-                    .padding([.top,.horizontal])
+                    .padding(.horizontal)
                     
-                    Button(action: { print("poop")}) {
+                    Spacer(minLength: 0)
+                    
+                    Button(action: {}) {
                         
-                        Text("Cancel Order")
+                        Text("BUY NOW")
                             .font(.title2)
-                            .fontWeight(.medium)
+                            .fontWeight(.bold)
                             .foregroundColor(.white)
                             .padding(.vertical)
                             .frame(width: UIScreen.main.bounds.width - 30)
-                            .background(
-                                Color("Dark Red")
-                            )
-                            .cornerRadius(15)
+                            .background(Color("UseMainRed"))
+                            .clipShape(Capsule())
                     }
+                    .padding(.top)
+                    .padding(.bottom,UIApplication.shared.windows.first?.safeAreaInsets.bottom == 0 ? 15 : 0)
                 }
-                .background(Color.white)
-                Spacer()
+                .padding(.top,isSmallDevice ? 0 : -20)
             }
-        
+            .background(
+                Color.white
+                    .clipShape(CustomCorner())
+                    .padding(.top,isSmallDevice ? -60 : -100)
+            )
+            .zIndex(0)
+            
         }
-        .navigationBarTitle(" ")
-        .navigationBarHidden(true)
-        
+        .background(Color("UseMainRed").ignoresSafeArea(.all, edges: .top))
+        .background(Color.white.ignoresSafeArea(.all, edges: .bottom))
+        .onAppear {
+            
+            // First Color Is Image Or Bag Color...
+            selectedColor = Color("UseMainRed")
+        }
     }
 }
-

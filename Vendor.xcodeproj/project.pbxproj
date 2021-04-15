@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		6DCEC754B6CB9ADB870788B6 /* Pods_Vendor_VendorUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB1AD5E55B6A83976CB1794B /* Pods_Vendor_VendorUITests.framework */; };
 		B33BE7952612DA93002303CC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B33BE7942612DA93002303CC /* GoogleService-Info.plist */; };
+		B33DB1932628696E0030177E /* CustomCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33DB1922628696E0030177E /* CustomCorner.swift */; };
+		B33DB19826286AAA0030177E /* ItemButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33DB19726286AAA0030177E /* ItemButton.swift */; };
 		B33ED6CD261D665F00DAAD47 /* VendorApp2.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33ED6CC261D665F00DAAD47 /* VendorApp2.swift */; };
 		B33ED6D2261D671D00DAAD47 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33ED6D1261D671D00DAAD47 /* LoginViewModel.swift */; };
 		B33ED6D7261D676800DAAD47 /* WelcomeScreen2.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33ED6D6261D676800DAAD47 /* WelcomeScreen2.swift */; };
@@ -58,6 +60,8 @@
 		5818869424F79BB13CC6C069 /* Pods-Vendor.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vendor.debug.xcconfig"; path = "Target Support Files/Pods-Vendor/Pods-Vendor.debug.xcconfig"; sourceTree = "<group>"; };
 		A6C838BF21CFC3CC02809630 /* Pods_VendorTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VendorTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B33BE7942612DA93002303CC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		B33DB1922628696E0030177E /* CustomCorner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCorner.swift; sourceTree = "<group>"; };
+		B33DB19726286AAA0030177E /* ItemButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemButton.swift; sourceTree = "<group>"; };
 		B33ED6B7261D58E900DAAD47 /* Vendor.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Vendor.entitlements; sourceTree = "<group>"; };
 		B33ED6CC261D665F00DAAD47 /* VendorApp2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VendorApp2.swift; sourceTree = "<group>"; };
 		B33ED6D1261D671D00DAAD47 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
@@ -135,6 +139,13 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		B33DB191262864110030177E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		B33ED6C6261D65F700DAAD47 /* Login */ = {
 			isa = PBXGroup;
 			children = (
@@ -150,14 +161,16 @@
 			isa = PBXGroup;
 			children = (
 				B34132CA2615685900B36B62 /* VMs.swift */,
-				B34132CB2615685900B36B62 /* ItemView.swift */,
 				B34132CD2615685900B36B62 /* Item.swift */,
 				B34132CE2615685900B36B62 /* VM.swift */,
+				B34132CB2615685900B36B62 /* ItemView.swift */,
 				B34132CF2615685900B36B62 /* Purchase.swift */,
 				B34132D02615685900B36B62 /* LocationManager.swift */,
 				B34132D12615685900B36B62 /* VendorView.swift */,
 				B34132D22615685900B36B62 /* VendorMap.swift */,
 				B346BB11261ED1A700B96C63 /* SettingsView.swift */,
+				B33DB1922628696E0030177E /* CustomCorner.swift */,
+				B33DB19726286AAA0030177E /* ItemButton.swift */,
 			);
 			path = Leo;
 			sourceTree = "<group>";
@@ -198,13 +211,14 @@
 		B5D247F625C39DB400E00410 /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
+				B33DB191262864110030177E /* Models */,
 				B33ED6C6261D65F700DAAD47 /* Login */,
-				B33ED6B7261D58E900DAAD47 /* Vendor.entitlements */,
 				B34132DF261568AC00B36B62 /* Rushil */,
 				B34132C92615685900B36B62 /* Leo */,
 				B5D247F725C39DB400E00410 /* VendorApp.swift */,
 				B5D2480025C39DB600E00410 /* Info.plist */,
 				B33BE7942612DA93002303CC /* GoogleService-Info.plist */,
+				B33ED6B7261D58E900DAAD47 /* Vendor.entitlements */,
 				B5D247FB25C39DB600E00410 /* Assets.xcassets */,
 				B5D247FD25C39DB600E00410 /* Preview Content */,
 			);
@@ -487,12 +501,14 @@
 			files = (
 				B34132E7261568AD00B36B62 /* SignupView.swift in Sources */,
 				B34132DB2615685900B36B62 /* VendorMap.swift in Sources */,
+				B33DB19826286AAA0030177E /* ItemButton.swift in Sources */,
 				B346BB12261ED1A700B96C63 /* SettingsView.swift in Sources */,
 				B34132E4261568AC00B36B62 /* PaymentView.swift in Sources */,
 				B33ED6D2261D671D00DAAD47 /* LoginViewModel.swift in Sources */,
 				B33ED6CD261D665F00DAAD47 /* VendorApp2.swift in Sources */,
 				B34132DA2615685900B36B62 /* VendorView.swift in Sources */,
 				B34132D62615685900B36B62 /* Item.swift in Sources */,
+				B33DB1932628696E0030177E /* CustomCorner.swift in Sources */,
 				B3558C27261FD0ED00987D60 /* ContentView.swift in Sources */,
 				B34132D32615685900B36B62 /* VMs.swift in Sources */,
 				B34132D72615685900B36B62 /* VM.swift in Sources */,

@@ -13,12 +13,15 @@
 //
 //    init() {
 //        FirebaseApp.configure()
-//    }
+////    
 //
 //    var body: some Scene {
 //        WindowGroup {
 //            NavigationView{
 //                ContentView()
+//                    .navigationBarTitle("")
+//                    .navigationBarHidden(true)
+//                    .navigationViewStyle(StackNavigationViewStyle())
 //            }
 //        }
 //    }
