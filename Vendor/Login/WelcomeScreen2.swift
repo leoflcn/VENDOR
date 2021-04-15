@@ -44,6 +44,8 @@ struct WelcomeScreen2: View {
                             .offset(x: 60, y: 0)
                         
                     }
+                    .navigationBarTitle("Welcome")
+                    .navigationBarHidden(true)
                     
                     Spacer()
                     
@@ -75,11 +77,17 @@ struct WelcomeScreen2: View {
                     .frame(height: 55)
                     .clipShape(Capsule())
                     .padding(.horizontal,60)
-                    .offset(y: -62)
+                    .offset(y: -85)
                 
                 }
+                .navigationBarTitle("Welcome")
+                .navigationBarHidden(true)
             }
+            .navigationBarTitle("Welcome")
+            .navigationBarHidden(true)
         }
+        .navigationBarTitle("Welcome")
+        .navigationBarHidden(true)
     }
 }
 struct WelcomeScreen2_Previews: PreviewProvider {

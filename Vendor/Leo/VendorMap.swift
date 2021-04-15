@@ -13,7 +13,6 @@ import Firebase
 
 struct VendorMap: View {
     
-    @AppStorage("log_status") var log_Status = false
     @ObservedObject var VModel = VMs()
     @ObservedObject private var locationManager = LocationManager()
     @State private var region = MKCoordinateRegion(center: CLLocationCoordinate2D.init(latitude: 31, longitude: -100), span: MKCoordinateSpan(latitudeDelta: 0.2, longitudeDelta: 0.2))
@@ -30,27 +29,10 @@ struct VendorMap: View {
     
     var body: some View {
         
-        ZStack(alignment: .topLeading) {
+        
+        VStack {
             
-            VStack(alignment: .leading){
-                
-                NavigationLink(
-                    destination: SettingsView()){
-                    HStack()
-                    {
-                        Image(systemName: "house")
-                            .foregroundColor(Color("UseMainRed"))
-                            .font(.system(size: 25))
-                    }
-                    .padding()
-                    .frame(width: 55, height: 55, alignment: .center)
-                    .background(Color.white)
-                    .cornerRadius(30)
-                }
-            }
-            
-            
-            VStack {
+            ZStack {
                 if locationManager.location != nil {
                     Map(coordinateRegion: $region, interactionModes: .all, showsUserLocation: true, userTrackingMode: nil, annotationItems: VModel.machines) {
                         VM in
@@ -65,15 +47,30 @@ struct VendorMap: View {
                         }
                     }
                 }
+                
+                VStack(alignment: .leading){
+                    
+                    NavigationLink(
+                        destination: SettingsView()){
+                        Image(systemName: "ellipsis.circle")
+                            .foregroundColor(Color("UseMainRed"))
+                            .font(.system(size: 25))
+                            .frame(width: 55, height: 55, alignment: .center)
+                          //  .background(Color.white)
+                            .cornerRadius(30)
+                    }
+                }
+                .offset(x: 150, y: -370)
             }
-            .navigationBarTitle("Log in")
-            .navigationBarHidden(true)
-            .onAppear { setCurrentLocation() }
-            .onAppear { VModel.FetchData() }
-            .edgesIgnoringSafeArea(.all)
         }
+        .navigationBarTitle("Map")
+        .navigationBarHidden(true)
+        .onAppear { setCurrentLocation() }
+        .onAppear { VModel.FetchData() }
+        .edgesIgnoringSafeArea(.all)
     }
 }
+
 
 struct VendorMap_Previews: PreviewProvider {
     static var previews: some View {

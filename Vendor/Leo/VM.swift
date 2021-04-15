@@ -12,8 +12,7 @@ struct VM: Codable, Identifiable {
     @DocumentID var id: String? = UUID().uuidString
     let name: String
     let type: String
-    let building: String
-    let buildingDescription: String
+    let description: String
     let address: String
     let latitude: Double
     let longitude: Double
@@ -22,8 +21,7 @@ struct VM: Codable, Identifiable {
     static let example = VM (id: "sd",
                              name: "UTSA",
                              type: "Food",
-                             building: "engineeringbuilding50",
-                             buildingDescription: "This is the UTSA engineering building.",
+                             description: "This is the UTSA engineering building.",
                              address: "idk its at UTSA",
                              latitude: 29.5827,
                              longitude: -98.6189,

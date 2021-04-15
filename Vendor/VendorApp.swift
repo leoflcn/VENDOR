@@ -14,7 +14,7 @@ struct FiretestApp: App {
     init() {
         FirebaseApp.configure()
     }
-    
+
     var body: some Scene {
         WindowGroup {
             NavigationView {

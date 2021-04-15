@@ -22,7 +22,7 @@ struct VendorView: View {
                 GeometryReader
                 { geo in
                     
-                    Image(VM.building)
+                    Image(VM.name)
                         .resizable()
                         .aspectRatio(contentMode:.fit)
                         .frame(width: geo.size.width)
@@ -91,7 +91,7 @@ struct VendorView: View {
                     Spacer()
                     VStack(alignment: .leading) //location information
                     {
-                        Text(VM.buildingDescription + "                       ") // There is a problem here with spacing
+                        Text(VM.description + "                       ") // There is a problem here with spacing
                             .lineLimit(isExpanded ? nil : 2)
                             .background(!isExpanded ? nil : Color("UseBlack"))
                         Button(action:{

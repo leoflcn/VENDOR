@@ -30,7 +30,7 @@ struct WelcomeScreen: View {
                             .foregroundColor(.white)
                             .frame(width: 500, height: 35, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                             .offset(x: -75, y: 0)
-                            
+                        
                         
                         
                         Text("Start finding your place right now")
@@ -56,7 +56,7 @@ struct WelcomeScreen: View {
                         .background(Color("UseMainRed"))
                         .cornerRadius(40)
                     }
-                
+                    
                     Spacer()
                     
                     HStack {
@@ -71,7 +71,11 @@ struct WelcomeScreen: View {
                     
                 }
             }
+            .navigationBarTitle("Welcome")
+            .navigationBarHidden(true)
         }
+        .navigationBarTitle("")
+        .navigationBarHidden(true)
     }
 }
 struct WelcomeScreen_Previews: PreviewProvider {

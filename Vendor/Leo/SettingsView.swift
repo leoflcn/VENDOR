@@ -60,14 +60,16 @@ struct SettingsView: View {
                             .frame(width: UIScreen.main.bounds.width / 2)
                             .background(Color("UseMainRed"))
                             .clipShape(Capsule())
-                            .offset(x: UIScreen.main.bounds.width / 4,
-                                    y: UIScreen.main.bounds.height / 2.75)
                     })
+                    .offset(x: UIScreen.main.bounds.width / 4,
+                            y: UIScreen.main.bounds.height / 2.75)
                 }
                 .navigationTitle("Settings")
                 .navigationBarHidden(true)
             }
         }
+        .navigationTitle("Settings")
+        .navigationBarHidden(true)
     }
 }
 
