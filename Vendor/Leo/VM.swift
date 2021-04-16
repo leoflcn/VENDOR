@@ -25,15 +25,15 @@ struct VM: Codable, Identifiable {
                              address: "idk its at UTSA",
                              latitude: 29.5827,
                              longitude: -98.6189,
-                             items: [Item(id: 1, name: "poo", price: 2, description: "hji", image: "Food", isAdded: false),
-                                     Item(id: 2, name: "poo", price: 2, description: "hji", image: "Food", isAdded: false),
-                                     Item(id: 3, name: "poo", price: 2, description: "hji", image: "Food", isAdded: false),
-                                     Item(id: 1, name: "poo", price: 2, description: "hji", image: "Food", isAdded: false),
-                                     Item(id: 2, name: "poo", price: 2, description: "hji", image: "Food", isAdded: false),
-                                     Item(id: 3, name: "poo", price: 2, description: "hji", image: "Food", isAdded: false),
-                                     Item(id: 1, name: "poo", price: 2, description: "hji", image: "Food", isAdded: false),
-                                     Item(id: 2, name: "poo", price: 2, description: "hji", image: "Food", isAdded: false),
-                                     Item(id: 3, name: "poo", price: 2, description: "hji", image: "Food", isAdded: false)]
+                             items: [Item(id: 1, name: "poo", price: 2, description: "hji", quantity: 12),
+                                     Item(id: 1, name: "poo", price: 2, description: "hji", quantity: 12),
+                                     Item(id: 1, name: "poo", price: 2, description: "hji", quantity: 12),
+                                     Item(id: 1, name: "poo", price: 2, description: "hji", quantity: 12),
+                                     Item(id: 1, name: "poo", price: 2, description: "hji", quantity: 12),
+                                     Item(id: 1, name: "poo", price: 2, description: "hji", quantity: 12),
+                                     Item(id: 1, name: "poo", price: 2, description: "hji", quantity: 12),
+                                     Item(id: 1, name: "poo", price: 2, description: "hji", quantity: 12),
+                                     Item(id: 1, name: "poo", price: 2, description: "hji", quantity: 12)]
 
     )
 }

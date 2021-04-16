@@ -17,12 +17,7 @@ struct FiretestApp: App {
 
     var body: some Scene {
         WindowGroup {
-          //  NavigationView {
                 WelcomeScreen()
-//                .navigationBarTitle("Log in")
-//                .navigationBarHidden(true)
-//            }
-
         }
     }
 }

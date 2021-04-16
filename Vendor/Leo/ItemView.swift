@@ -101,11 +101,11 @@ struct ItemView: View {
                         .foregroundColor(.white)
                 }
                 
-                Image(item.image)
+                Image(item.name)
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     // Hero Animation...
-                    .matchedGeometryEffect(id: item.image, in: animation)
+                    .matchedGeometryEffect(id: item.name, in: animation)
             }
             .padding()
             .padding(.top,10)

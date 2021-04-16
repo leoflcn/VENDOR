@@ -10,7 +10,7 @@ import SwiftUI
 
 class Purchase: NSObject, ObservableObject {
     
-   @Published var item: Item = Item(id: 1, name: "pooo", price: 3, description: "poo", image: "Food", isAdded: false)
+    @Published var item: Item = Item(id: 1, name: "pooo", price: 3, description: "poo", quantity: 5)
     
     func Choose(item: Item) {
         

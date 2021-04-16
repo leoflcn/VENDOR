@@ -13,7 +13,6 @@ struct Item: Codable, Identifiable {
     let name: String
     let price: Double
     let description: String
-    let image: String
-    var isAdded: Bool
+    var quantity: Int
     
 }

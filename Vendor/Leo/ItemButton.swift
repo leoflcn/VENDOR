@@ -22,11 +22,11 @@ struct ItemButton: View {
                 Color(.white)
                     .cornerRadius(15)
                 
-                Image(item.image)
+                Image(item.name)
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .padding(20)
-                    .matchedGeometryEffect(id: item.image, in: animation)
+                    .matchedGeometryEffect(id: item.name, in: animation)
             }
             
             Text(item.name)
