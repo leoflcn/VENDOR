@@ -51,10 +51,10 @@ struct VendorView: View {
                                     .foregroundColor(.black)
                             })
                             
-                            Circle()
-                                .fill(Color("UseMainRed"))
-                                .frame(width: 15, height: 15)
-                                .offset(x: 5, y: -10)
+//                            Circle()
+//                                .fill(Color("UseMainRed"))
+//                                .frame(width: 15, height: 15)
+//                                .offset(x: 5, y: -10)
                         })
                         
                     }
@@ -125,11 +125,11 @@ struct VendorView: View {
                     }
                 })
             }
-            .background(Color.black.opacity(0.05).ignoresSafeArea(.all, edges: .all))
+            .background(Color.black.opacity(0.2).ignoresSafeArea(.all, edges: .all))
             
             if selectedItem != nil && show{
                 
-                ItemView(item: $selectedItem, show: $show, animation: animation)
+                ItemView(VM: VM, item: $selectedItem, show: $show, animation: animation)
                 
             }
         }

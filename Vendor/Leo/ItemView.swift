@@ -32,7 +32,7 @@
 import SwiftUI
 
 struct ItemView: View {
-    
+    let VM: VM
     @Binding var item : Item!
     @Binding var show: Bool
     var animation: Namespace.ID
@@ -63,7 +63,7 @@ struct ItemView: View {
                             .offset(y: 3)
                     }
                     
-                    Text("Delicious Treat")
+                    Text(VM.name)
                         .fontWeight(.bold)
                         .foregroundColor(.white)
                         .padding(.top)
@@ -223,3 +223,4 @@ struct ItemView: View {
         }
     }
 }
+
