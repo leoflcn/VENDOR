@@ -3,33 +3,9 @@
 //  Vendor
 //
 //  Created by leo on 3/22/21.
-//
-//
-//import SwiftUI
-//
-//struct ItemView: View {
-//
-//    let item: Item
-//    @StateObject var buy = Purchase()
-//    var body: some View {
-//        NavigationView {
-//            VStack{
-//                Text(item.name)
-//                    .foregroundColor(.black)
-//
-//                Button("buy", action: {
-//                        buy.Choose(item: item) }
-//                )
-//
-//                Text(buy.item.name)
-//                    .foregroundColor(.black)
-//            }
-//
-//        }
-//    }
-//}
 
 import SwiftUI
+import iPaymentButton
 
 struct ItemView: View {
     let VM: VM
@@ -99,13 +75,17 @@ struct ItemView: View {
                         .font(.largeTitle)
                         .fontWeight(.heavy)
                         .foregroundColor(.white)
+                    
+                    Spacer()
                 }
+                    Spacer()
                 
                 Image(item.name)
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     // Hero Animation...
                     .matchedGeometryEffect(id: item.name, in: animation)
+                    .frame(width: 250, height: 250)
             }
             .padding()
             .padding(.top,10)
@@ -119,11 +99,11 @@ struct ItemView: View {
                         
                         VStack(alignment: .leading, spacing: 8) {
                             
-                            Text("Very")
+                            Text("Calories")
                                 .fontWeight(.bold)
                                 .foregroundColor(.gray)
                             
-                            Text("Tasty")
+                            Text(String(item.calories))
                                 .fontWeight(.heavy)
                                 .foregroundColor(.black)
                             
@@ -133,11 +113,11 @@ struct ItemView: View {
                         
                         VStack(alignment: .leading, spacing: 8) {
                             
-                            Text("Quantity")
+                            Text("Stock")
                                 .fontWeight(.semibold)
                                 .foregroundColor(.black)
                             
-                            Text("10")
+                            Text(String(VM.quantities[item.id]))
                                 .fontWeight(.heavy)
                                 .foregroundColor(.black)
                         }
@@ -190,19 +170,7 @@ struct ItemView: View {
                     
                     Spacer(minLength: 0)
                     
-                    Button(action: {}) {
-                        
-                        Text("BUY NOW")
-                            .font(.title2)
-                            .fontWeight(.bold)
-                            .foregroundColor(.white)
-                            .padding(.vertical)
-                            .frame(width: UIScreen.main.bounds.width - 30)
-                            .background(Color("UseMainRed"))
-                            .clipShape(Capsule())
-                    }
-                    .padding(.top)
-                    .padding(.bottom,UIApplication.shared.windows.first?.safeAreaInsets.bottom == 0 ? 15 : 0)
+                    PaymentButton(VM: VM, item: item)
                 }
                 .padding(.top,isSmallDevice ? 0 : -20)
             }

@@ -16,7 +16,9 @@ struct VM: Codable, Identifiable {
     let address: String
     let latitude: Double
     let longitude: Double
+    var quantities: [Int]
     let items: [Item]
+    
     
     static let example = VM (id: "sd",
                              name: "UTSA",
@@ -25,15 +27,16 @@ struct VM: Codable, Identifiable {
                              address: "idk its at UTSA",
                              latitude: 29.5827,
                              longitude: -98.6189,
-                             items: [Item(id: 1, name: "poo", price: 2, description: "hji", quantity: 12),
-                                     Item(id: 1, name: "poo", price: 2, description: "hji", quantity: 12),
-                                     Item(id: 1, name: "poo", price: 2, description: "hji", quantity: 12),
-                                     Item(id: 1, name: "poo", price: 2, description: "hji", quantity: 12),
-                                     Item(id: 1, name: "poo", price: 2, description: "hji", quantity: 12),
-                                     Item(id: 1, name: "poo", price: 2, description: "hji", quantity: 12),
-                                     Item(id: 1, name: "poo", price: 2, description: "hji", quantity: 12),
-                                     Item(id: 1, name: "poo", price: 2, description: "hji", quantity: 12),
-                                     Item(id: 1, name: "poo", price: 2, description: "hji", quantity: 12)]
+                             quantities: [1,2,3,4,5,6,7,8,9],
+                             items: [Item(id: 1, name: "poo", price: 2, description: "hji", calories: 12),
+                                     Item(id: 1, name: "poo", price: 2, description: "hji", calories: 12),
+                                     Item(id: 1, name: "poo", price: 2, description: "hji", calories: 12),
+                                     Item(id: 1, name: "poo", price: 2, description: "hji", calories: 12),
+                                     Item(id: 1, name: "poo", price: 2, description: "hji", calories: 12),
+                                     Item(id: 1, name: "poo", price: 2, description: "hji", calories: 12),
+                                     Item(id: 1, name: "poo", price: 2, description: "hji", calories: 12),
+                                     Item(id: 1, name: "poo", price: 2, description: "hji", calories: 12),
+                                     Item(id: 1, name: "poo", price: 2, description: "hji", calories: 12)]
 
     )
 }

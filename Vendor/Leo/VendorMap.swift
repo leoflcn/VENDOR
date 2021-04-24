@@ -22,7 +22,7 @@ struct VendorMap: View {
         cancellable = locationManager.$location.sink { location in
             region = MKCoordinateRegion(
                 center: location?.coordinate ?? CLLocationCoordinate2D(),
-                span: MKCoordinateSpan(latitudeDelta: 0.2, longitudeDelta: 0.2)
+                span: MKCoordinateSpan(latitudeDelta: 0.004, longitudeDelta: 0.004)
             )
         }
     }

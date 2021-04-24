@@ -7,7 +7,7 @@
 import SwiftUI
 
 struct VendorView: View {
-    
+
     @Environment(\.presentationMode) var presentation
     let VM: VM
     @Namespace var animation
@@ -92,15 +92,20 @@ struct VendorView: View {
                         
                         VStack(alignment: .leading) //location information
                         {
-                            Text(VM.description) // There is a problem here with spacing
-                                .lineLimit(isExpanded ? nil : 2)
-                            Button(action:{
-                                isExpanded.toggle()
-                            }){
-                                Text(isExpanded ? "Close" : "Read more")
-                                    .font(.caption).bold()
-                                    .padding(.top, 4.0)
-                                    .foregroundColor(Color.red)
+                            HStack() {
+                                
+                                VStack(alignment: .leading) {
+                                    Text(VM.description) // There is a problem here with spacing
+                                        .lineLimit(isExpanded ? nil : 2)
+                                    Button(action:{
+                                        isExpanded.toggle()
+                                    }){
+                                        Text(isExpanded ? "Close" : "Read more")
+                                            .font(.caption).bold()
+                                            .padding(.top, 4.0)
+                                            .foregroundColor(Color.red)
+                                    }
+                                }
                             }
                         }
                         
@@ -119,13 +124,14 @@ struct VendorView: View {
                                         }
                                     }
                             }
+                            .frame(width: 180, height: 220)
                         }
                         .padding()
                         .padding(.top,10)
                     }
                 })
             }
-            .background(Color.black.opacity(0.2).ignoresSafeArea(.all, edges: .all))
+            .background(Color.black.opacity(0.1).ignoresSafeArea(.all, edges: .all))
             
             if selectedItem != nil && show{
                 

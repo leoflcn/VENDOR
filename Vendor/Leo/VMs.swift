@@ -28,4 +28,29 @@ class VMs: ObservableObject {
             }
         }
     }
+    
+    func updateDocumentArray(VM: VM, item: Item) {
+        // [START update_document_array]
+        let database = db.collection("Vending Machines").document(VM.id!)
+        
+        var quantities = VM.quantities
+        
+        quantities[item.id] -= 1
+        
+        database.updateData([
+                    "quantities": FieldValue.delete(),
+                ]) { err in
+                    if let err = err {
+                        print("Error updating document: \(err)")
+                    } else {
+                        print("Document successfully updated")
+                    }
+                }
+
+        database.updateData([
+            "quantities": FieldValue.arrayUnion(quantities)
+        ])
+        // Atomically add a new region to the "regions" array field.
+        
+    }
 }
