@@ -66,12 +66,12 @@ struct ItemView: View {
             HStack(spacing: 10){
                 
                 VStack(alignment: .leading, spacing: 6) {
-                    
+                    Spacer(minLength: 30)
                     Text("Price")
                         .fontWeight(.bold)
                         .foregroundColor(.white)
                     
-                    Text("$" + String(item.price))
+                    Text("$" + String(format: "%.2f", item.price))
                         .font(.largeTitle)
                         .fontWeight(.heavy)
                         .foregroundColor(.white)
@@ -115,7 +115,7 @@ struct ItemView: View {
                             
                             Text("Stock")
                                 .fontWeight(.semibold)
-                                .foregroundColor(.black)
+                                .foregroundColor(.gray)
                             
                             Text(String(VM.quantities[item.id]))
                                 .fontWeight(.heavy)
@@ -128,7 +128,7 @@ struct ItemView: View {
                         .foregroundColor(.gray)
                         .multilineTextAlignment(.leading)
                         .padding()
-                    
+                    Spacer()
                     HStack(spacing: 20){
                         
                         Button(action: {
@@ -167,8 +167,8 @@ struct ItemView: View {
                         }
                     }
                     .padding(.horizontal)
-                    
-                    Spacer(minLength: 0)
+                    .offset(y:-20)
+                   // Spacer(minLength: 0)
                     
                     PaymentButton(VM: VM, item: item)
                 }

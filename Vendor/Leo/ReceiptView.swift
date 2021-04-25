@@ -65,7 +65,7 @@ struct ReceiptView: View {
                                 HStack{
                                     Text("Order No:")
                                         .font(.system(size:15, weight: .medium))
-                                    Text(String())
+                                    Text(UUID().uuidString)
                                 }
                                 HStack{
                                     Text("Order Date:")

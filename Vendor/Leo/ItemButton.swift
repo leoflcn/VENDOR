@@ -33,7 +33,7 @@ struct ItemButton: View {
                 .fontWeight(.heavy)
                 .foregroundColor(.gray)
             
-            Text("$" + String(item.price))
+            Text("$" + String(format: "%.2f", item.price))
                 .fontWeight(.heavy)
                 .foregroundColor(Color("UseBlack"))
         }

@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXAggregateTarget section */
@@ -3035,7 +3035,6 @@
 		B32E4ECE6C9E4C0DE991616B2A667260 /* async_unary_call_impl.h in Copy impl/codegen Public Headers */ = {isa = PBXBuildFile; fileRef = 6E873516B7DA07CF277A7F1B441BC461 /* async_unary_call_impl.h */; };
 		B33692A06B9CCB26A7C28E44B78F711F /* protocol.upb.h in Headers */ = {isa = PBXBuildFile; fileRef = 569508CB8EC43E40CE6896CE7FA91927 /* protocol.upb.h */; };
 		B33B707C8B06B5D088F8623B5ADBDB05 /* x509.c in Sources */ = {isa = PBXBuildFile; fileRef = B9EEF2F748B3F1C63B920A998CB5CE01 /* x509.c */; settings = {COMPILER_FLAGS = "-DOPENSSL_NO_ASM -GCC_WARN_INHIBIT_ALL_WARNINGS -w -fno-objc-arc"; }; };
-		B3444E2F262E3E2A00DD06AD /* iPaymentButton in Frameworks */ = {isa = PBXBuildFile; productRef = B3444E2E262E3E2A00DD06AD /* iPaymentButton */; };
 		B345C7FA98F98694B65DC9A24E058F71 /* aes.h in Copy . Public Headers */ = {isa = PBXBuildFile; fileRef = 93859719AF9A97334F1A72E46FAE402D /* aes.h */; };
 		B346A16CF490AE1617C0689ED7C830AB /* global_config_custom.h in Copy src/core/lib/gprpp Private Headers */ = {isa = PBXBuildFile; fileRef = 6145EE2F30384483A14998CC52554696 /* global_config_custom.h */; };
 		B374DBDA3079FA558B39A06101F917BB /* firebase_credentials_provider_apple.mm in Sources */ = {isa = PBXBuildFile; fileRef = FCDF0DDFB91562E9AE1EA2E32121A8CB /* firebase_credentials_provider_apple.mm */; settings = {COMPILER_FLAGS = "$(inherited) -Wreorder -Werror=reorder -Wno-comma"; }; };
@@ -12011,7 +12010,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				50CC17F148BAF4C2B502FE41E844D72B /* Foundation.framework in Frameworks */,
-				B3444E2F262E3E2A00DD06AD /* iPaymentButton in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -18398,7 +18396,6 @@
 			);
 			name = abseil;
 			packageProductDependencies = (
-				B3444E2E262E3E2A00DD06AD /* iPaymentButton */,
 			);
 			productName = abseil;
 			productReference = BF96B57ADE05E8909F823BDF6868B3E3 /* absl.framework */;
@@ -18619,7 +18616,6 @@
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
 			packageReferences = (
-				B3444E2D262E3E2A00DD06AD /* XCRemoteSwiftPackageReference "iPaymentButton" */,
 			);
 			productRefGroup = 4C1FAA218E63EE57C6BB6DB9EE55F9F4 /* Products */;
 			projectDirPath = "";
@@ -22605,25 +22601,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		B3444E2D262E3E2A00DD06AD /* XCRemoteSwiftPackageReference "iPaymentButton" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/benjaminsage/iPaymentButton.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 0.0.3;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		B3444E2E262E3E2A00DD06AD /* iPaymentButton */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = B3444E2D262E3E2A00DD06AD /* XCRemoteSwiftPackageReference "iPaymentButton" */;
-			productName = iPaymentButton;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 }

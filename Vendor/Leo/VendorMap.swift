@@ -17,6 +17,7 @@ struct VendorMap: View {
     @ObservedObject private var locationManager = LocationManager()
     @State private var region = MKCoordinateRegion(center: CLLocationCoordinate2D.init(latitude: 31, longitude: -100), span: MKCoordinateSpan(latitudeDelta: 0.2, longitudeDelta: 0.2))
     @State private var cancellable: AnyCancellable?
+    @State private var name = ""
     
     private func setCurrentLocation() {
         cancellable = locationManager.$location.sink { location in
@@ -52,7 +53,17 @@ struct VendorMap: View {
                 }
                 
                 VStack(alignment: .leading){
+                    HStack{
+                        Spacer()
+                        Image(systemName: "magnifyingglass")
+                            .foregroundColor(.gray)
+                        
+                        TextField("Search for Items", text: $name)
+                            .colorScheme(.light)
                     
+                    .padding(.vertical,10)
+                    .padding(.horizontal)
+                    .background(Color.white)
                     NavigationLink(
                         destination: SettingsView()
                             .navigationBarTitle("")
@@ -66,7 +77,8 @@ struct VendorMap: View {
                             .cornerRadius(30)
                     }
                 }
-                .offset(x: 150, y: -370)
+                }
+                .offset(y: -370)
             }
         }
 //        .navigationBarTitle("Map")

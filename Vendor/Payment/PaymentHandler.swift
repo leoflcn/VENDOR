@@ -28,7 +28,7 @@ var completionHandler: PaymentCompletionHandler?
     // Create our payment request
     let paymentRequest = PKPaymentRequest()
     paymentRequest.paymentSummaryItems = paymentSummaryItems
-    paymentRequest.merchantIdentifier = "merchant.com.YOURDOMAIN.YOURAPPNAME"
+    paymentRequest.merchantIdentifier = "merchant.com.Falcon.Vendor"
     paymentRequest.merchantCapabilities = .capability3DS
     paymentRequest.countryCode = "US"
     paymentRequest.currencyCode = "USD"

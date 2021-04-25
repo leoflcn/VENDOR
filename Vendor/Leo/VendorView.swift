@@ -97,6 +97,7 @@ struct VendorView: View {
                                 VStack(alignment: .leading) {
                                     Text(VM.description) // There is a problem here with spacing
                                         .lineLimit(isExpanded ? nil : 2)
+                                        .foregroundColor(.black)
                                     Button(action:{
                                         isExpanded.toggle()
                                     }){
@@ -106,7 +107,10 @@ struct VendorView: View {
                                             .foregroundColor(Color.red)
                                     }
                                 }
+                                Spacer()
                             }
+                            .padding(.horizontal)
+                            .padding(.top)
                         }
                         
                         
@@ -131,7 +135,7 @@ struct VendorView: View {
                     }
                 })
             }
-            .background(Color.black.opacity(0.1).ignoresSafeArea(.all, edges: .all))
+            .background(Color("justgrey").ignoresSafeArea(.all, edges: .all))
             
             if selectedItem != nil && show{
                 
