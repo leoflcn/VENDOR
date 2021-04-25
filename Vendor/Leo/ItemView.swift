@@ -5,7 +5,6 @@
 //  Created by leo on 3/22/21.
 
 import SwiftUI
-import iPaymentButton
 
 struct ItemView: View {
     let VM: VM
@@ -168,9 +167,26 @@ struct ItemView: View {
                     }
                     .padding(.horizontal)
                     .offset(y:-20)
-                   // Spacer(minLength: 0)
-                    
+                   
+                    if VM.quantities[item.id] > 0 {
                     PaymentButton(VM: VM, item: item)
+                    }
+                    
+                    else {
+                        Button(action: {}) {
+                            Text("Out of Stock")
+                                .fontWeight(.semibold)
+                                .font(.title)
+                                .cornerRadius(4)
+                        }
+                        .frame(minWidth: 100, maxWidth: 400)
+                        .frame(height: 60)
+                        .foregroundColor(.white)
+                        .background(RoundedRectangle(cornerRadius: 4))
+                  
+                        
+                    }
+                    
                 }
                 .padding(.top,isSmallDevice ? 0 : -20)
             }
